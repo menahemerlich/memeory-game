@@ -12,6 +12,22 @@
     <div id="game-board"></div>
 
     <script>
+        let val;
+        function checkI(element){
+            if (val == null){
+                val = element.innerHTML
+                console.log(val);
+            }
+            else {
+                if (element.innerHTML === val){
+                    console.log("win");
+                } else {
+                    console.log("loss");
+                    
+                }
+            }
+        }
+
         const board = document.getElementById("game-board")
         const arr = ['🚗', '🚗', '🚑', '🚑', '🏍️', '🏍️', '🚠', '🚠', '🚛', '🚛', '🚀', '🚀']
         for (let i = 0; i < arr.length; i++) {
@@ -31,9 +47,9 @@
                 newDiv.style.fontSize = "5em"
                 newDiv.style.background = "green"
                 newDiv.style.border = "3px solid"
-                const cardName = "n" + i                
+                const cardName = "n" + i  
+                checkI(newDiv)              
                 })
-
         }
     </script>
 </body>
