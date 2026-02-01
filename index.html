@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-board"></div>
+
+    <script>
+        const board = document.getElementById("game-board")
+        const arr = ['🚗', '🚗', '🚑', '🚑', '🏍️', '🏍️', '🚠', '🚠', '🚛', '🚛', '🚀', '🚀']
+        for (let i = 0; i < arr.length; i++) {
+            const div = document.createElement("div")
+            const newId = "id" + i
+            div.id = newId
+            board.appendChild(div)
+            const newDiv = document.getElementById(newId)
+            newDiv.style.width = "150px";
+            newDiv.style.height = "150px";
+            newDiv.style.background = "black"
+            newDiv.style.margin = "10px"
+            newDiv.style.borderRadius = "20px";
+            newDiv.style.textAlign = "center"
+            newDiv.addEventListener("click", ()=>{
+                newDiv.innerHTML = arr[i]
+                newDiv.style.fontSize = "5em"
+                newDiv.style.background = "green"
+                newDiv.style.border = "3px solid"
+                const cardName = "n" + i                
+                })
+
+        }
+    </script>
+</body>
+
+</html>
